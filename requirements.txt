@@ -1,0 +1,15 @@
+streamlit
+pandas
+mlb_stat_collection
+mlb_stat_adjust
+random
+matplotlib
+matplotlib.pyplot
+statistics
+re
+sys
+datetime
+pybaseball
+requests
+bs4
+unicodedata
