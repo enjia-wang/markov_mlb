@@ -1,7 +1,5 @@
 streamlit
 pandas
-mlb_stat_collection
-mlb_stat_adjust
 random
 matplotlib
 matplotlib.pyplot
