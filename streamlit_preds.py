@@ -24,6 +24,30 @@ with st.form("game_info"):
 if submitted: 
     if home_team and away_team and date: 
         prob_dict, stat_lists = simulate_mlb_game(home_team,away_team,date,bat_proj,pitch_proj)
-        st.markdown(
-            prob_dict
-        )
+
+        print(prob_dict["Home_Win_Prob"])
+        print(prob_dict["Over_8_Prob"])
+        print(prob_dict["Over_4_Prob"])
+        print(prob_dict["RIFI_Prob"])
+
+        # find probabilities within betting range
+        if prob_dict["Home_Win_Prob"] >= 0.575 and prob_dict["Home_Win_Prob"] <= 0.625:
+            st.markdown(f"Home Will Likely Win, prob: {prob_dict["Home_Win_Prob"]}")
+        if prob_dict["Home_Win_Prob"] >= 0.65:
+            st.markdown(f"Home Will Likely Win, prob: {prob_dict["Home_Win_Prob"]}")
+        elif prob_dict["Home_Win_Prob"] <= 0.375: 
+            st.markdown(f"Home Will Likely Lose, prob: {round(1-prob_dict["Home_Win_Prob"],2)}")
+        
+        if prob_dict["Over_8_Prob"] >= 0.6 and prob_dict["Over_8_Prob"] <= 0.65: 
+            st.markdown(f"Total Runs Likely Over 8.5, prob: {prob_dict["Over_8_Prob"]}")
+        if prob_dict["Over_8_Prob"] >= 0.725:
+            st.markdown(f"Total Runs Likely Over 8.5, prob: {prob_dict["Over_8_Prob"]}")
+
+        if prob_dict["Over_4_Prob"] >= 0.625: 
+            st.markdown(f"Total Runs Likely Over 4.5, prob: {prob_dict["Over_4_Prob"]}")
+        elif prob_dict["Over_4_Prob"] <= 0.375: 
+            st.markdown(f"Total Runs Likely Under 4.5, prob: {round(1-prob_dict["Over_4_Prob"],2)}")
+
+        if prob_dict["RIFI_Prob"] >= 0.6: 
+            st.markdown(f"Run in First Inning Likely, prob: {prob_dict["RIFI_Prob"]}")
+            st.markdown(f"Run in First Inning Likely, prob: {prob_dict["RIFI_Prob"]}")
