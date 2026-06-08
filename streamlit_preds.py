@@ -1,7 +1,6 @@
 import streamlit as st 
 from markov_mlb import simulate_mlb_game
 
-
 """
 streamlit run streamlit_preds.py
 """
