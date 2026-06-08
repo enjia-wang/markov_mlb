@@ -1,12 +1,6 @@
 streamlit
 pandas
 matplotlib
-matplotlib.pyplot
-statistics
-re
-sys
-datetime
 pybaseball
 requests
-bs4
-unicodedata
+beautifulsoup4
